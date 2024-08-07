@@ -1,6 +1,20 @@
 .NavBar {
-    background: linear-gradient(to right, #af206e, #6f5aad);
-    border: 1px solid #5d5d5d;
-  }
+  background: linear-gradient(to right, #af206e, #6f5aad);
+  border: 1px solid #5d5d5d;
+}
 
-  
+.NavLink {
+  padding: 5px;
+  color: rgb(213, 213, 213);
+}
+
+.Active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.NavLink:hover {
+  color: #ffffff;
+  font-weight: 600;
+
+}
