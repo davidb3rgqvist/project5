@@ -22,7 +22,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              Landing page
+              Home
             </NavLink>
             <NavLink
               className={styles.NavLink}
