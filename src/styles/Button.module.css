@@ -1,0 +1,16 @@
+.Button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Button.Wide {
+  width: 100%;
+}
+
+.Button.Bright:hover {
+  background-color: #0056b3;
+}

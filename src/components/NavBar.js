@@ -1,8 +1,8 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
-import logo from "../assets/logo_white.png";
+import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -10,7 +10,7 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="30" />
+            <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -22,21 +22,21 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              Home
+              <i className="fas fa-home"></i>Home
             </NavLink>
             <NavLink
               className={styles.NavLink}
               activeClassName={styles.Active}
-              to="/login"
+              to="/signin"
             >
-              Login
+              <i className="fas fa-sign-in-alt"></i>Sign in
             </NavLink>
             <NavLink
+              to="/signup"
               className={styles.NavLink}
               activeClassName={styles.Active}
-              to="/register"
             >
-              Register
+              <i className="fas fa-user-plus"></i>Sign up
             </NavLink>
           </Nav>
         </Navbar.Collapse>

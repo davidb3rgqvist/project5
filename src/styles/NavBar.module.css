@@ -1,7 +1,4 @@
-.NavBar {
-  background: linear-gradient(to right, #af206e, #6f5aad);
-  border: 1px solid #5d5d5d;
-}
+/* 
 
 .NavLink {
   padding: 5px;
@@ -17,4 +14,17 @@
   color: #ffffff;
   font-weight: 600;
 
+} */
+
+.NavBar {
+  background: linear-gradient(to right, #af206e, #6f5aad);
+  border: 1px solid #5d5d5d;
+}
+
+.NavLink {
+  padding: 5px;
+}
+
+.Active i {
+  color: #2142b2;
 }
