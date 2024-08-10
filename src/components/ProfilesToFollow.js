@@ -10,10 +10,15 @@ const ProfilesToFollow = ({ currentUser }) => {
     const fetchProfiles = async () => {
       try {
         const { data } = await axios.get("/profiles/");
-        const profilesToFollow = data.filter(profile => profile.owner !== currentUser.pk);
-        setProfiles(profilesToFollow);
+        if (Array.isArray(data)) {
+          const profilesToFollow = data.filter(profile => profile.owner !== currentUser.pk);
+          setProfiles(profilesToFollow);
+        } else {
+          console.error("Expected an array but got:", data);
+          setProfiles([]);  // Fallback to an empty array
+        }
       } catch (err) {
-        console.error(err);
+        console.error("Error fetching profiles:", err);
       }
     };
 

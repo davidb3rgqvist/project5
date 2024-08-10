@@ -9,8 +9,12 @@ const WorkoutFeed = () => {
     const fetchWorkoutPrograms = async () => {
       try {
         const { data } = await axios.get("/workouts/workoutprograms/");
-        console.log(data);  // Check the API response here
-        setWorkoutPrograms(data);
+        if (Array.isArray(data)) {
+          setWorkoutPrograms(data);
+        } else {
+          console.error("Expected an array but got:", data);
+          setWorkoutPrograms([]);  // Fallback to an empty array
+        }
       } catch (err) {
         console.error("Error fetching workout programs:", err);
       }

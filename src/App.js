@@ -1,3 +1,5 @@
+// src/App.js
+import React from "react";
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
 import Container from "react-bootstrap/Container";
@@ -12,6 +14,7 @@ import Profile from "./components/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -42,10 +45,12 @@ function App() {
               <Route exact path="/" render={() => <h1>Home page</h1>} />
               <Route exact path="/signin" render={() => <SignInForm />} />
               <Route exact path="/signup" render={() => <SignUpForm />} />
-              <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-              <ProtectedRoute exact path="/workout-feed" component={WorkoutFeed} />
-              <ProtectedRoute exact path="/profiles" component={Profile} />
-              <ProtectedRoute exact path="/profiles-to-follow" component={ProfilesToFollow} />
+              <ErrorBoundary>
+                <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+                <ProtectedRoute exact path="/workout-feed" component={WorkoutFeed} />
+                <ProtectedRoute exact path="/profiles" component={Profile} />
+                <ProtectedRoute exact path="/profiles-to-follow" component={ProfilesToFollow} />
+              </ErrorBoundary>
               <Route render={() => <p>Page not found!</p>} />
             </Switch>
           </Container>
