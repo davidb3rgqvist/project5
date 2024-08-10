@@ -1,16 +1,13 @@
 .Button {
-  background-color: #007bff;
+  background-color: #af206e;
   border: none;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.Button.Wide {
-  width: 100%;
+  align-items: center;
 }
 
 .Button.Bright:hover {
-  background-color: #0056b3;
+  background-color: #8c1757;
 }

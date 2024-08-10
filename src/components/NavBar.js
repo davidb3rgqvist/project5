@@ -10,7 +10,7 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="45" />
+            <img src={logo} alt="logo" height="30" />
           </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -22,21 +22,21 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              Home
             </NavLink>
             <NavLink
               className={styles.NavLink}
               activeClassName={styles.Active}
               to="/signin"
             >
-              <i className="fas fa-sign-in-alt"></i>Sign in
+              Sign in
             </NavLink>
             <NavLink
               to="/signup"
               className={styles.NavLink}
               activeClassName={styles.Active}
             >
-              <i className="fas fa-user-plus"></i>Sign up
+              Sign up
             </NavLink>
           </Nav>
         </Navbar.Collapse>
