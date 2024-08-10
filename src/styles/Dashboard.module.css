@@ -1,0 +1,29 @@
+.Sidebar {
+    background-color: #343a40;
+    padding: 20px;
+    min-height: 100vh;
+    color: #fff;
+  }
+  
+  .NavLink {
+    color: #adb5bd;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+  
+  .NavLink:hover {
+    color: #fff;
+  }
+  
+  .Active {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .Content {
+    padding: 20px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
