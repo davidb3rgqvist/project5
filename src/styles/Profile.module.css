@@ -1,0 +1,16 @@
+.ProfileCard {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.ProfileHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ProfileImage {
+  width: 80px;
+  height: 80px;
+  margin-right: 15px;
+}

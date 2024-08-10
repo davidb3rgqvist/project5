@@ -13,7 +13,7 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { SetCurrentUserContext } from "../../App";
 import heroImage from "../../assets/welcome.png";
-
+import Cookies from "js-cookie";
 
 function SignInForm() {
   const setCurrentUser = useContext(SetCurrentUserContext);
@@ -32,9 +32,35 @@ function SignInForm() {
     event.preventDefault();
 
     try {
-      const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      const { data } = await axios.post(
+        "/dj-rest-auth/login/",
+        signInData,
+        { withCredentials: true }
+      );
+      
+      // Store JWT in localStorage
+      localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("refresh_token", data.refresh_token);
+      
       setCurrentUser(data.user);
+
+      // Redirect to the dashboard after login
       history.push("/dashboard");
+
+     
+      const csrfToken = Cookies.get("csrftoken");
+      const accessToken = localStorage.getItem("access_token");
+
+      const profileResponse = await axios.get(`/profiles/${data.user.pk}/`, {
+        headers: {
+          "Authorization": `Bearer ${accessToken}`,
+          "X-CSRFToken": csrfToken,
+        },
+        withCredentials: true,
+      });
+
+      console.log(profileResponse.data);
+
     } catch (err) {
       setErrors(err.response?.data);
     }

@@ -1,0 +1,25 @@
+.ProfilesToFollowSidebar {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .ProfileItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .ProfileDetails {
+    margin-left: 10px;
+  }
+  
+  .ProfileDetails h6 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .ProfileDetails button {
+    margin-top: 5px;
+  }
+  

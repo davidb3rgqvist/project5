@@ -8,10 +8,11 @@ const WorkoutFeed = () => {
   useEffect(() => {
     const fetchWorkoutPrograms = async () => {
       try {
-        const { data } = await axios.get("/api/workoutprograms/");
+        const { data } = await axios.get("/workouts/workoutprograms/");
+        console.log(data);  // Check the API response here
         setWorkoutPrograms(data);
       } catch (err) {
-        console.error(err);
+        console.error("Error fetching workout programs:", err);
       }
     };
 

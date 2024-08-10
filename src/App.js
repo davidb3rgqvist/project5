@@ -5,7 +5,11 @@ import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
-import Dashboard from "./pages/Dashboard"; // Import Dashboard
+import Dashboard from "./pages/Dashboard";
+import WorkoutFeed from "./components/WorkoutFeed";
+import ProfilesToFollow from "./components/ProfilesToFollow";
+import Profile from "./components/Profile";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
@@ -38,7 +42,10 @@ function App() {
               <Route exact path="/" render={() => <h1>Home page</h1>} />
               <Route exact path="/signin" render={() => <SignInForm />} />
               <Route exact path="/signup" render={() => <SignUpForm />} />
-              <Route exact path="/dashboard" render={() => <Dashboard />} />
+              <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+              <ProtectedRoute exact path="/workout-feed" component={WorkoutFeed} />
+              <ProtectedRoute exact path="/profiles" component={Profile} />
+              <ProtectedRoute exact path="/profiles-to-follow" component={ProfilesToFollow} />
               <Route render={() => <p>Page not found!</p>} />
             </Switch>
           </Container>
