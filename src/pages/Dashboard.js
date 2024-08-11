@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Row, Col } from "react-bootstrap";
-import Profile from "../components/ProfileDataContext";
+import Profile from "../contexts/ProfileDataContext";
 import WorkoutFeed from "../components/WorkoutFeed";
 import ProfilesToFollow from "../components/ProfilesToFollow";
 import { CurrentUserContext } from "../App";
