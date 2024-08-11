@@ -10,7 +10,7 @@ import SignInForm from "./pages/auth/SignInForm";
 import Dashboard from "./pages/Dashboard";
 import WorkoutFeed from "./components/WorkoutFeed";
 import ProfilesToFollow from "./components/ProfilesToFollow";
-import Profile from "./components/Profile";
+import Profile from "./components/ProfileDataContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
